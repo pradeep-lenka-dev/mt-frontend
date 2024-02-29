@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]]
     });
-    // this.getAllUsers()
+    //this.getAllUsers()
   }
 
   getAllUsers(): void {
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       (response) => {
         this.users = response;
         localStorage.setItem('userData', JSON.stringify(this.users));
-        this.loginForm.reset() // Assign the response to your users array
+        this.loginForm.reset()
         this.router.navigate(['dashbord'])
         console.log(this.users)
       },
@@ -51,6 +51,10 @@ export class LoginComponent implements OnInit {
     )
 
     console.log(this.loginForm.value)
+
+  }
+  redirect(params) {
+    this.router.navigate([params])
 
   }
 

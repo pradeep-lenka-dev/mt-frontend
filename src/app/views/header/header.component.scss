@@ -2,6 +2,8 @@ header {
     height: 70px;
     width: 100vw;
     padding: 0 30px;
+    // background-color: #333333 !important;
+    // color: #ffffff !important;
     background-color: var(--background-color1);
     position: fixed;
     z-index: 100;
@@ -84,3 +86,7 @@ header {
     justify-content: center;
     overflow: hidden;
 }
+// .header {
+//     background-color:#333333 !important;
+//     color: #ffffff !important;
+// }

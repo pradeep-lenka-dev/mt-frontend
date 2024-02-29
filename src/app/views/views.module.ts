@@ -8,6 +8,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HomeComponent } from './home/home.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { AddFormComponent } from '../shared/add-form/add-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,14 +17,17 @@ import { RouterModule, Routes } from '@angular/router';
     DashobrdComponent,
     HeaderComponent,
     SidebarComponent,
-    HomeComponent
+    HomeComponent,
+    AddFormComponent
   ],
   imports: [
     CommonModule,
     TooltipModule,
-    RouterModule,
+    RouterModule.forChild([]),
      //Routes,
-    ViewsRoutingModule
-  ]
+    ViewsRoutingModule,
+    ReactiveFormsModule
+  ],
+  exports: [AddFormComponent]
 })
 export class ViewsModule { }

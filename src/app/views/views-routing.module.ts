@@ -14,7 +14,7 @@ const routes: Routes = [
 
   //  ]
  children: [
-    { path: 'home', component: HomeComponent },
+    { path: '', component: HomeComponent },
     // Add additional child routes if needed
   ]
   // Additional routes if needed

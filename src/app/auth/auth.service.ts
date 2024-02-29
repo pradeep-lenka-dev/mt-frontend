@@ -11,7 +11,7 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:5080/login'
   getAllUsers(): Observable<any> {
-    return this.http.get(this.apiUrl)
+    return this.http.get('http://localhost:5080/users')
   }
 
   login(params): Observable<any>{
