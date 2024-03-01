@@ -267,12 +267,6 @@
         font-size: 10px;
     }
 
-    .report-topic-heading,
-    .item1,
-    .items {
-        width: 300px;
-    }
-
     .report-body {
         padding: 10px;
     }
@@ -292,4 +286,27 @@
 
 .modal {
     display: none;
+}
+
+
+.report-body table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.report-body th,
+.report-body td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-body th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.report-body tbody tr {
+    text-align: center;
+    vertical-align: middle;
 }

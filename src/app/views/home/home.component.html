@@ -12,18 +12,19 @@
 
         <div class="box box1">
             <div class="text">
-                <h2 class="topic-heading">60.5k</h2>
-                <h2 class="topic">Article Views</h2>
+                <h2 class="topic-heading">10000</h2>
+                <h2 class="topic">Budget</h2>
             </div>
+            <i class="fas fa-money-bill-wave"></i>
 
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-                alt="Views">
+            <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+                alt="Views"> -->
         </div>
 
         <div class="box box2">
             <div class="text">
-                <h2 class="topic-heading">150</h2>
-                <h2 class="topic">Likes</h2>
+                <h2 class="topic-heading">{{totalExpense}}</h2>
+                <h2 class="topic">Total Expense</h2>
             </div>
 
             <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
@@ -52,24 +53,46 @@
     <div class="report-container">
         <div class="report-header">
             <h1 class="recent-Articles">Recent Expense</h1>
-            <h4>Total Amount:{{totalExpense}}</h4>
+            <h4>Total Amount:{{totalRecentExpense}}</h4>
             <button class="add-button  btn btn-primary" (click)="openModal()">ADD Expense</button>
         </div>
 
         <div class="report-body">
-            <div class="report-topic-heading">
+            <!-- <div class="report-topic-heading">
                 <h3 class="t-op">Transaction</h3>
                 <h3 class="t-op">Type</h3>
                 <h3 class="t-op">Amount</h3>
                 <h3 class="t-op">Tag</h3>
             </div>
 
-            <div class="item1" *ngFor="let item of allExpense">
+            <div class="item1" *ngFor="let item of recntExpense">
                 <h3 class="t-op-nextlvl">{{item.expenseName}}</h3>
                 <h3 class="t-op-nextlvl">{{item.expenseCategory}}</h3>
                 <h3 class="t-op-nextlvl">{{item.expenseAmount}}</h3>
                 <h3 class="t-op-nextlvl label-tag">{{item.expenseDate}}</h3>
-            </div>
+            </div> -->
+
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Tag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of recntExpense">
+                        <td>{{item.expenseName}}</td>
+                        <td>{{item.expenseCategory}}</td>
+                        <td>{{item.expenseAmount}}</td>
+                        <td>{{item.expenseDate | date: 'medium'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
         </div>
     </div>
 </div>
