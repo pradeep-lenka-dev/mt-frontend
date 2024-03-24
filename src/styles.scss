@@ -1,3 +1,4 @@
+//@import "~bootstrap-icons/font/bootstrap-icons.css";
 $navy-blue: #004d9a;
 $dark-green: #006633;
 $charcoal-gray: #333333;
@@ -33,27 +34,12 @@ body{
 }
 
 
-
-// body {
-//     background-color: var(--background-color4);
-//     max-width: 100%;
-//     overflow-x: hidden;
-// }
-.logo {
-    font-size: 27px;
-    font-weight: 600;
-    color: rgb(37, 95, 52);
-}
-
-.icn {
-    height: 30px;
-}
-
-
-
 .dpicn {
     height: 42px;
 }
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+//html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

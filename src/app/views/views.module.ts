@@ -11,6 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddFormComponent } from '../shared/add-form/add-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+//import { ChartsModule } from 'ng2-charts';
+//import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -18,16 +20,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     SidebarComponent,
     HomeComponent,
-    AddFormComponent
+    AddFormComponent,
+    
   ],
   imports: [
     CommonModule,
     TooltipModule,
     RouterModule.forChild([]),
-     //Routes,
+    //Routes,
     ViewsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    // ChartModule,
+    
+
   ],
-  exports: [AddFormComponent]
+  exports: [
+    //AddFormComponent
+  ]
 })
 export class ViewsModule { }

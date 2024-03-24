@@ -1,98 +1,119 @@
-<div class="main">
-
-    <!-- <div class="searchbar2">
-        <input type="text" name="" id="" placeholder="Search">
-        <div class="searchbtn">
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-                class="icn srchicn" alt="search-button">
-        </div>
-    </div> -->
-
-    <div class="box-container">
-
-        <div class="box box1">
-            <div class="text">
-                <h2 class="topic-heading">10000</h2>
-                <h2 class="topic">Budget</h2>
-            </div>
-            <i class="fas fa-money-bill-wave"></i>
-
-            <!-- <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
-                alt="Views"> -->
-        </div>
-
-        <div class="box box2">
-            <div class="text">
-                <h2 class="topic-heading">{{totalExpense}}</h2>
-                <h2 class="topic">Total Expense</h2>
+<!-- <div class="main"> -->
+<div class="  row container">
+    <div class=" column left-column">
+        <!-- <i class="bi-alarm" style="font-size: 2rem; color: cornflowerblue;"></i> -->
+        <div class="box-container">
+            <div class="box box1">
+                <div class="text" (click)="openModal({ title: 'Add your budget', type: 'budget' })">
+                    <h5>Total Balance</h5>
+                    <!-- <i class="bi bi-plus btn-add"></i> -->
+                    <h6> <i class="bi bi-currency-rupee"></i> 1200 </h6>
+                    <!-- <canvas id="MyChart">{{ chart }}</canvas> -->
+                </div>
+                <!-- <button class="btn btn-danger btn-add"> -->
+                <!-- <i class=" btn btn-add  bi bi-plus"></i> Bootstrap Icons plus icon -->
+                <!-- </button> -->
             </div>
 
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
-        </div>
-
-        <div class="box box3">
-            <div class="text">
-                <h2 class="topic-heading">320</h2>
-                <h2 class="topic">Comments</h2>
+            <div class="box box2">
+                <div class="text">
+                    <h5>Total Expenses</h5>
+                    <h6> <i class="bi bi-currency-rupee"></i> {{ totalExpense }} </h6>
+                    <!-- <canvas id="MyCharts">{{ chart }}</canvas> -->
+                </div>
             </div>
 
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
-                alt="comments">
-        </div>
+            <div class="box box3">
+                <div class="text">
+                    <button (click)="openModal({ title: 'bt', type: 'bt' })">Open Modal</button>
 
-        <div class="box box4">
-            <div class="text">
-                <h2 class="topic-heading">70</h2>
-                <h2 class="topic">Published</h2>
+                </div>
+
+
             </div>
 
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
+            <div class="box box4">
+                <div class="text">
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class=" report-container">
+            <div class="report-header">
+                <h1 class="recent-Articles">Recent Expense</h1>
+                <h4>Total Amount:{{totalRecentExpense}}</h4>
+                <button class="add-button  btn btn-primary"
+                    (click)="openModal({ title: 'Add your expence', type: 'expence' })">ADD Expense</button>
+            </div>
+
+            <div class="report-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Tag</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of recntExpense">
+                            <td>{{item.expenseName}}</td>
+                            <td>{{item.expenseCategory}}</td>
+                            <td>{{item.expenseAmount}}</td>
+                            <td>{{item.expenseDate | date: 'medium'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
         </div>
     </div>
-
-    <div class="report-container">
-        <div class="report-header">
-            <h1 class="recent-Articles">Recent Expense</h1>
-            <h4>Total Amount:{{totalRecentExpense}}</h4>
-            <button class="add-button  btn btn-primary" (click)="openModal()">ADD Expense</button>
-        </div>
-
-        <div class="report-body">
-            <!-- <div class="report-topic-heading">
-                <h3 class="t-op">Transaction</h3>
-                <h3 class="t-op">Type</h3>
-                <h3 class="t-op">Amount</h3>
-                <h3 class="t-op">Tag</h3>
+    <div class="  column right-column">
+        <div class="card chartbox">
+            <div class="text">
+                <canvas id="MyChart">{{ chart }}</canvas>
             </div>
+        </div>
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title ">Monthly Expenses Breakdown</h5>
+                <div>
 
-            <div class="item1" *ngFor="let item of recntExpense">
-                <h3 class="t-op-nextlvl">{{item.expenseName}}</h3>
-                <h3 class="t-op-nextlvl">{{item.expenseCategory}}</h3>
-                <h3 class="t-op-nextlvl">{{item.expenseAmount}}</h3>
-                <h3 class="t-op-nextlvl label-tag">{{item.expenseDate}}</h3>
-            </div> -->
+                    <div class="progress" style="max-width: 100%">
+                        <!-- <div class="progress-bar" [style.width]="getExpenseWidth(expense)" style="width: 10%" *ngFor="let expense of expensesArray">10%
+                        </div> -->
+                        <div *ngFor="let expense of expensesArray">
+                            <div class="progress-bar" [style.width]="getExpenseWidth(expense)"
+                                [style.backgroundColor]="getExpenseColor(expense)">
+                                <!-- {{ expense.category }} -->
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- <h3>{{ categoryData.category }}</h3> -->
 
+                        <li class="list-group-item list-item" *ngFor="let expense of expensesArray">
+                            <span class="dot" [style.backgroundColor]="getExpenseColor(expense)"></span> <span
+                                class="left-value">{{expense.category}}</span> <span class="right-values"><i
+                                    class="bi bi-currency-rupee"></i>
+                                ${{expense.categoryTotal}}
+                                <span class="bold">{{expense.categoryPercentage}}%</span></span>
+                        </li>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Transaction</th>
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Tag</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of recntExpense">
-                        <td>{{item.expenseName}}</td>
-                        <td>{{item.expenseCategory}}</td>
-                        <td>{{item.expenseAmount}}</td>
-                        <td>{{item.expenseDate | date: 'medium'}}</td>
-                    </tr>
-                </tbody>
-            </table>
+                    </div>
 
-
+                </div>
+            </div>
         </div>
     </div>
 </div>
+<!-- </div> -->
+
+<!-- parent.component.html -->
+<!-- <app-custom-modal [modalTitle]="dynamicTitle"></app-custom-modal> -->

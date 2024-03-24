@@ -2,12 +2,12 @@
 
 //@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+//     font-family: "Poppins", sans-serif;
+// }
 
 // :root {
 //     --background-color1: #fafaff;
@@ -21,23 +21,53 @@
 //     --two-use-color: #5500cb;
 // }
 
-body {
-   // background-color: var(--background-color4);
-   // max-width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-        padding: 0;
-        background-color: #004d9a; // Change to desired root color
-        color: #ffffff;
-}
+// body {
+//    // background-color: var(--background-color4);
+//    // max-width: 100%;
+//     overflow-x: hidden;
+//     margin: 0;
+//         padding: 0;
+//         background-color: #004d9a; // Change to desired root color
+//         color: #ffffff;
+// }
+// router-outlet {
+//     width: 100% !important;
+//    // flex: 1;
+//     /* Occupy remaining space in the container */
+// //overflow-y: auto;
+//     /* Enable vertical scrolling if content exceeds container height */
+// }
+// .main-container {
+//     display: flex;
+//     width: 100vw;
+//     // position: relative;
+//      top: 70px;
+//     // z-index: 1;
+// }
 
+
+/* Styles for the main container */
 .main-container {
     display: flex;
-    width: 100vw;
-    position: relative;
-    top: 70px;
-    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent content from overflowing */
 }
 
+/* Styles for the app-sidebar */
+app-sidebar {
+    width: 150px;
+    /* Example width of the sidebar */
+    flex-shrink: 0;
+    /* Prevent sidebar from shrinking */
+}
+
+/* Styles for the router outlet */
+router-outlet {
+    //flex: 1;
+    /* Fill the remaining space */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content exceeds container height */
+}
 
 
