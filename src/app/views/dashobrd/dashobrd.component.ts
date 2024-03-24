@@ -19,9 +19,15 @@ export class DashobrdComponent implements OnInit {
     
   }
 
-  logout() {
-    localStorage.removeItem('userData')
-    this.router.navigate(['login'])
-  }
+ 
+
+
+//   const menuicn = document.querySelector(".menuicn");
+// const nav = document.querySelector(".navcontainer");
+
+// menuicn.addEventListener("click", () => {
+//   nav.classList.toggle("navclose");
+// })
+
 
 }
