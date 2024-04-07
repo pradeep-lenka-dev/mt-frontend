@@ -22,7 +22,6 @@ export class AddFormComponent implements OnInit {
   @Input() modalStyle: any;
   @Input() title: any;
   @Input() type: any;
-  @Input() formConfig: any;
   @Input() message: any;
   @Input() modalButtonColor: any;
   public categoriesList = []
@@ -53,7 +52,7 @@ export class AddFormComponent implements OnInit {
 
       this.budgetForm
       = this.formBuilder.group({
-        budgetName: [''],
+        //budgetName: [''],
         budgetAmount: [],
         budgetDate: [],
 
@@ -62,12 +61,10 @@ export class AddFormComponent implements OnInit {
   }
 
   getCategoriesList() {
-    console.log("calll....")
     try {
       this.commonService.getCategoriesList().subscribe(
         (Response) => {
           this.categoriesList = Response.categoriesList
-          console.log("🚀 ~ AddFormComponent ~ getCategoriesList ~ Response:", Response)
           return {
           }
         },
