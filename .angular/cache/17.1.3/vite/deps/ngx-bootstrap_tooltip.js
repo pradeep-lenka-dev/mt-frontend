@@ -41,12 +41,12 @@ import {
   ɵɵprojection,
   ɵɵprojectionDef
 } from "./chunk-MD6ZMTF5.js";
+import "./chunk-QV2ZGKU6.js";
 import {
   animationFrameScheduler,
   fromEvent,
   merge
 } from "./chunk-4444AGEO.js";
-import "./chunk-QV2ZGKU6.js";
 import {
   Subject,
   __decorate,

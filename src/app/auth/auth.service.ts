@@ -9,9 +9,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private apiUrl = 'http://localhost:5080/login'
+  private apiUrl = 'https://mt-backend-pn1v.onrender.com/login'
   getAllUsers(): Observable<any> {
-    return this.http.get('http://localhost:5080/users')
+    return this.http.get('https://mt-backend-pn1v.onrender.com/users')
   }
 
   login(params): Observable<any>{
