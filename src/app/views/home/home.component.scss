@@ -1,23 +1,35 @@
-
+.mains{
+   // padding: 10px;
+    background-color: #131129;
+    overflow-y: hidden;
+    overflow: hidden;
+   // width: 108%;
+    
+}
 .searchbar2 {
     display: none;
 }
-.container {
+.containers {
     display: grid;
+    overflow: hidden;
     grid-template-columns: 60% 40%;
-    width: 100vw;
+    width: 97vw;
 }
 
 .column {
     padding: 20px;
 }
-
+.card-cointainer{
+        background-color: #131129;
+        width: 100%;
+        padding: 15px; // #f0f0f0;
+}
 .left-column {
-    background-color: #f0f0f0;
+    background-color:#131129;// #f0f0f0;
     //flex: 0 0 80%;
 }
 .right-column {
-    background-color: #f0f0f0;
+    background-color:#131129 //#f0f0f0;
 }
 
 .box-container {
@@ -27,15 +39,14 @@
     //flex-wrap: wrap;
     gap: 25px;
     justify-content: space-around;
-
     
 }
 
 .box {
-    height: 100px;
-    width: 170px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+    height: 160px;
+    width: 100%;
+   // border-radius: 20px;
+    //box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
     //padding: 20px;
     display: flex;
     align-items: center;
@@ -43,6 +54,11 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
     position: relative;
+    background-color: #1D1933;
+}
+.box h5,h6{
+    color: white;
+
 }
 
 
@@ -96,10 +112,11 @@
 .report-container {
     min-height: 300px;
     max-width: 1200px;
-    margin: 70px auto 0px auto;
-    background-color: #ffffff;
-    border-radius: 30px;
-    box-shadow: 3px 3px 10px rgb(188, 188, 188);
+   // margin: 30px auto 0px auto;
+   // background-color: #ffffff;
+    background-color: #1D1933;
+    //border-radius: 30px;
+   // box-shadow: 3px 3px 10px rgb(188, 188, 188);
     padding: 0px 20px 20px 20px;
 }
 
@@ -112,11 +129,14 @@
     padding: 20px 20px 10px 20px;
     border-bottom: 2px solid rgba(0, 20, 151, 0.59);
 }
+.report-header h4{
+    color: white;
+}
 
 .recent-Articles {
     font-size: 30px;
     font-weight: 600;
-    color: #5500cb;
+    color:white //#5500cb;
 }
 
 .add-button {
@@ -132,11 +152,11 @@
 
 .report-body {
     max-width: 900px;
-     overflow-x: auto;
+    overflow-x: auto;
     padding: 10px;
     //overflow: scroll;
     overflow-y: scroll;
-        overflow-x: hidden;
+    overflow-x: hidden;
     height: 200px;
 }
 
@@ -147,6 +167,7 @@
     position: sticky;
     justify-content: space-between;
     align-items: center;
+    color: white;
 }
 
 .t-op {
@@ -312,10 +333,11 @@
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
+    color: white;
 }
 
 .report-body th {
-    background-color: #f2f2f2;
+    //background-color: #f2f2f2;
     font-weight: bold;
 }
 
@@ -336,16 +358,6 @@
     right: 10px;
     /* Adjust right position as needed */
 }
-
-
-
-
-
-
-
-
-
-
 
 
 .budget-card {
@@ -372,17 +384,26 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: #f0f0f0;
+    background-color: #1D1933;
+   // background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.chartbox{
+        background-color: #1D1933;
+        color: white;
+        padding: 10px;
+}
 .chart {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: #3498db;
+    //background-color: #3498db;
+}
+canvas{
+        background-color: #1D1933;
+        color: white;
 }
 
 .remaining-balance {
@@ -451,6 +472,7 @@
 }
 .card-title{
     text-align: center;
+    color: white;
     
 }
 .progress{
@@ -470,12 +492,14 @@
       align-items: center;
       margin-bottom: 10px;
       margin-top: 20px;
+      color: white;
       /* Adjust margin as needed */
   }
 
   .left-value {
       flex: 1;
       margin-left: 10px;
+      color: white;
       /* Takes up remaining space */
   }
 
@@ -495,4 +519,7 @@
   .bold {
       font-weight: bold;
       /* Make the text bold */
+  }
+  .custom-card{
+    background-color:#1D1933 ;
   }

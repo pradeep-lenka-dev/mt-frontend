@@ -68,35 +68,33 @@ export class HomeComponent implements OnInit {
     this.loginUsers = this.commonservice.getLoggedInUser();
     this.getCurentmonthExpense()
     console.log("call")
-this.expenseservice.fun()
+    this.expenseservice.fun()
     this.canvas = document.getElementById('myChart')
     const chartData = [
       //{ label: 'remainingBudget', data: [remainingBudget, monthlyExpenses], backgroundColor: this.backgroundColor }
     ];
-    this.chart = new Chart("MyCharts", {
-      type: 'pie',
 
-      data: {
-        labels: [
-          'remainingBudget',
-          'monthlyExpenses',
-          'Yellow'
-        ],
-        datasets: chartData,
-      },
+    //   data: {
+    //     labels: [
+    //       'remainingBudget',
+    //       'monthlyExpenses',
+    //       'Yellow'
+    //     ],
+    //     datasets: chartData,
+    //   },
 
-      options: {
-        cutout: 50,
-        circumference: 180,
-        aspectRatio: 2.5,
-        responsive: true,
-        animation: {
-          animateScale: true,
-          animateRotate: true
-        }
+    //   options: {
+    //     cutout: 50,
+    //     circumference: 180,
+    //     aspectRatio: 2.5,
+    //     responsive: true,
+    //     animation: {
+    //       animateScale: true,
+    //       animateRotate: true
+    //     }
 
-      }
-    });
+    //   }
+    // });
   }
   createDynamicForm(): void {
     this.dynamicFormContainer.clear();
@@ -119,8 +117,19 @@ this.expenseservice.fun()
   createChart() {
     const monthlyBudget = 100000;
     const remainingBudget = monthlyBudget - this.monthlyTotalExpense;
+    const chartOptions = {
+      // plugins: {
+      //   title: {
+      //     display: true,
+      //     text: 'Custom Chart Title',
+      //     color: 'white' // Set label color to white
+      //   }
+      // }
+      aspectRatio: 2.5,
+      color: 'white'
+    };
     this.chart = new Chart("MyChart", {
-      type: 'pie',
+      type: 'doughnut',
 
       data: {
         labels: [
@@ -135,7 +144,7 @@ this.expenseservice.fun()
         ],
       },
 
-      options: { aspectRatio: 2.5 }
+      options: chartOptions
     });
   }
 
@@ -167,6 +176,7 @@ this.expenseservice.fun()
 
     this.expenseservice.getRecentExpenses(temp).subscribe(
       async (response) => {
+        console.log("🚀 ~ response:", response)
         this.recntExpense = response.expense
         this.totalRecentExpense = 0;
         for (let i = 0; i < this.recntExpense.length; i++) {
@@ -261,6 +271,10 @@ this.expenseservice.fun()
         return '#84CC16'
       case 'healthcare':
         return "#22C55E"
+      case 'clothing':
+        return '#84CC16'
+      case 'housing':
+        return ''
       default:
         return 'gray'
     }
